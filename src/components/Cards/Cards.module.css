@@ -9,18 +9,39 @@
 }
 
 .infected {
-    border-bottom: 10px solid rgba(0, 255, 0, 0.5);
-}
-
-.dead {
-    border-bottom: 10px solid rgba(255, 0, 0, 0.5);
+    border-bottom: 10px solid #BB86FC;
 }
 
 .recovered {
-    margin-right: 2% !important;
-    border-bottom: 10px solid rgba(0, 0, 255, 0.5);
+    border-bottom: 10px solid #C94D29;
 }
+
+.dead {
+    border-bottom: 10px solid #af0625;
+}
+
 
 .header1 {
     font-family: lato;
+}
+
+.idk {
+    background-color: red !important;
+}
+
+p {
+    font-family: lato !important;
+    color: rgb(236, 236, 236) !important;
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        margin-left: 4% !important;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    h1 {
+        margin-left: 5% !important;
+    }
 }

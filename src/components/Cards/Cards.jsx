@@ -5,6 +5,7 @@ import {
   Typography,
   Grid,
   createMuiTheme,
+  ThemeProvider,
 } from "@material-ui/core";
 import styles from "./Cards.module.css";
 import CountUp from "react-countup";
@@ -14,28 +15,32 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
   if (!confirmed) {
     return "Loading...";
   }
-  const theme = createMuiTheme({
-    palette: {
-      main: "#ff4400",
-    },
-  });
   return (
     <div className={styles.container}>
-      <h1 className={styles.header1}>Covid-19 Cases In Georgia</h1>
-      <Grid container spacing={3} justify="center">
+      <h1 className={styles.header1} style={{ color: "#E2E2E2" }}>
+        Covid-19 Cases In Georgia
+      </h1>
+      <Grid container spacing={5} justify="center">
         {/* infected */}
         <Grid
           item
           component={Card}
           className={cx(styles.card, styles.infected)}
-          xs={12}
-          md={3.5}
+          xs={10}
+          md={12}
+          style={{ background: "#1E1E1E" }}
         >
           <CardContent>
-            <Typography color="textSecondary" gutterBottom>
+            <Typography
+              color="textSecondary"
+              gutterBottom
+              style={{
+                color: "#E2E2E2",
+              }}
+            >
               Infected
             </Typography>
-            <Typography variant="h5">
+            <Typography variant="h5" style={{ color: "#ececec" }}>
               <CountUp
                 start={0}
                 end={confirmed.value}
@@ -53,17 +58,18 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
         </Grid>
         {/* recovered */}
         <Grid
+          style={{ background: "#1E1E1E" }}
           item
           component={Card}
           className={cx(styles.card, styles.recovered)}
-          xs={12}
-          md={5}
+          xs={10}
+          md={12}
         >
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
               Recoverd
             </Typography>
-            <Typography variant="h5">
+            <Typography variant="h5" style={{ color: "#ececec" }}>
               <CountUp
                 start={0}
                 end={recovered.value}
@@ -81,17 +87,18 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
         </Grid>
         {/* dead */}
         <Grid
+          style={{ background: "#1E1E1E" }}
           item
           component={Card}
           className={cx(styles.card, styles.dead)}
-          xs={12}
-          md={5}
+          xs={10}
+          md={12}
         >
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
               Dead
             </Typography>
-            <Typography variant="h5">
+            <Typography variant="h5" style={{ color: "#ececec" }}>
               <CountUp
                 start={0}
                 end={deaths.value}
